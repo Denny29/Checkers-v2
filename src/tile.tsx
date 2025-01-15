@@ -3,8 +3,8 @@ type tileProps = {
 }
 
 const tile = () => {
-    return <div className="tile">
-        hi
+    return <div className="tiles">
+        Hi
     </div>
 }
 
