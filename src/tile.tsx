@@ -2,9 +2,9 @@ type tileProps = {
     color: string
 }
 
-const tile = () => {
-    return <div className="tiles">
-        Hi
+const tile = ({color}: tileProps) => {
+    return <div className={`tiles ${color}`}>
+
     </div>
 }
 
