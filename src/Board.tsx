@@ -7,12 +7,21 @@ const Board = () => {
     let totalColumns = 8
 
     const [gameBoard, updateBoard]= useState<string[][]>(
-        Array.from({ length: totalRows }, () => Array(totalColumns).fill(""))
+        [
+            ["", "", "", "", "", "", "", ""] , 
+            ["", "", "", "", "", "", "", ""] , 
+            ["", "", "", "", "", "", "", ""] , 
+            ["", "", "", "", "", "", "", ""] , 
+            ["", "", "", "", "", "", "", ""] , 
+            ["", "", "", "", "", "", "", ""] , 
+            ["", "", "", "", "", "", "", ""] , 
+            ["", "", "", "", "", "", "", ""] 
+        ]
     )
+    //Array.from({ length: totalRows }, () => Array(totalColumns).fill(""))
+    console.log(gameBoard)
     const [tileColors, setTileColors] = useState<string[]>(["navy-blue" , "sky-blue"])
     
-    //Add additional color options below
-
     return <>
         <div>
             <h1>Choose a Color Palette:</h1>
@@ -21,10 +30,10 @@ const Board = () => {
         <div className="game">
             {gameBoard.map((row, rowIndex) => {
                 return <div key={`row-${rowIndex}`} className="rows">
-                    {row.map((item, columnIndex) => {
+                    {row.map((piece, columnIndex) => {
                         return <Tile 
                             color = {tileColors[(columnIndex + rowIndex) % 2]}
-                            piece={item}
+                            piece={piece}
                             key={`${rowIndex}-${columnIndex}`} />
                     })}
                 </div>
