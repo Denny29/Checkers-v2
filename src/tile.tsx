@@ -5,7 +5,7 @@ type tileProps = {
 
 const tile = ({color, piece}: tileProps) => {
     return <div className={`tiles ${color}`}>
-        {piece != ""?  <img className="pieces" src={`src/assets/${piece}.png`}></img> : ""}
+        {piece != ""?  <img className="pieces" alt={`${piece} piece`} src={`src/assets/${piece}.png`}></img> : ""}
     </div>
 }
 

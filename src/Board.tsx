@@ -8,18 +8,17 @@ const Board = () => {
 
     const [gameBoard, updateBoard]= useState<string[][]>(
         [
+            ["red", "", "red", "", "red", "", "red", ""] , 
+            ["", "red", "", "red", "", "red", "", "red"] , 
             ["", "", "", "", "", "", "", ""] , 
             ["", "", "", "", "", "", "", ""] , 
             ["", "", "", "", "", "", "", ""] , 
             ["", "", "", "", "", "", "", ""] , 
-            ["", "", "", "", "", "", "", ""] , 
-            ["", "", "", "", "", "", "", ""] , 
-            ["", "", "", "", "", "", "", ""] , 
-            ["", "", "", "", "", "", "", ""] 
+            ["black", "", "black", "", "black", "", "black", ""] , 
+            ["", "black", "", "black", "", "black", "", "black"] 
         ]
     )
     //Array.from({ length: totalRows }, () => Array(totalColumns).fill(""))
-    console.log(gameBoard)
     const [tileColors, setTileColors] = useState<string[]>(["navy-blue" , "sky-blue"])
     
     return <>
