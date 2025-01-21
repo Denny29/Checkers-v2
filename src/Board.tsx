@@ -5,20 +5,31 @@ import { ColorField } from "./ColorField";
 const Board = () => {
     let totalRows = 8
     let totalColumns = 8
+    let starterBoard = Array.from({ length: totalRows }, () => Array(totalColumns).fill(""))
 
-    const [gameBoard, updateBoard]= useState<string[][]>(
-        [
-            ["red", "", "red", "", "red", "", "red", ""] , 
-            ["", "red", "", "red", "", "red", "", "red"] , 
-            ["", "", "", "", "", "", "", ""] , 
-            ["", "", "", "", "", "", "", ""] , 
-            ["", "", "", "", "", "", "", ""] , 
-            ["", "", "", "", "", "", "", ""] , 
-            ["black", "", "black", "", "black", "", "black", ""] , 
-            ["", "black", "", "black", "", "black", "", "black"] 
-        ]
-    )
-    //Array.from({ length: totalRows }, () => Array(totalColumns).fill(""))
+    for (let row = 0; row < totalRows; row++) {
+        for (let column = 0; column < totalColumns; column++) {
+            if(row < 3){
+                if ((row + column) % 2 === 0) 
+                    starterBoard[row][column] = "red"
+            }
+            else if(row > 4){
+                if ((row + column) % 2 === 0) 
+                    starterBoard[row][column] = "black"
+            }
+        }
+    }
+    const [gameBoard, updateBoard]= useState<string[][]>(starterBoard)
+    // [
+    //     ["red", "", "red", "", "red", "", "red", ""] , 
+    //     ["", "red", "", "red", "", "red", "", "red"] , 
+    //     ["red", "", "red", "", "red", "", "red", ""] , 
+    //     ["", "", "", "", "", "", "", ""] , 
+    //     ["", "", "", "", "", "", "", ""] , 
+    //     ["", "black", "", "black", "", "black", "", "black"] , 
+    //     ["black", "", "black", "", "black", "", "black", ""] , 
+    //     ["", "black", "", "black", "", "black", "", "black"] 
+    // ]
     const [tileColors, setTileColors] = useState<string[]>(["navy-blue" , "sky-blue"])
     
     return <>
