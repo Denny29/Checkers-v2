@@ -43,3 +43,7 @@
   width: 66%;
   border-radius: 10px;
 }
+
+.tileClicked{
+  background-color: orange;
+}

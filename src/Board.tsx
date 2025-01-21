@@ -20,17 +20,7 @@ const Board = () => {
         }
     }
     const [gameBoard, updateBoard]= useState<string[][]>(starterBoard)
-    // [
-    //     ["red", "", "red", "", "red", "", "red", ""] , 
-    //     ["", "red", "", "red", "", "red", "", "red"] , 
-    //     ["red", "", "red", "", "red", "", "red", ""] , 
-    //     ["", "", "", "", "", "", "", ""] , 
-    //     ["", "", "", "", "", "", "", ""] , 
-    //     ["", "black", "", "black", "", "black", "", "black"] , 
-    //     ["black", "", "black", "", "black", "", "black", ""] , 
-    //     ["", "black", "", "black", "", "black", "", "black"] 
-    // ]
-    const [tileColors, setTileColors] = useState<string[]>(["navy-blue" , "sky-blue"])
+    const [tileColors, setTileColors] = useState<string[]>(["navy-blue" , "sky-blue", "tileClicked"])
     
     return <>
         <div>
