@@ -1,11 +1,18 @@
 type tileProps = {
     color: string
     piece: string
-    
+    rowIndex: number
+    columnIndex: number
 }
 
-const tile = ({color, piece}: tileProps) => {
-    return <div className={`tiles ${color}`}>
+
+
+const tile = ({color, piece, rowIndex, columnIndex}: tileProps) => {
+    
+    return <div onClick={() => {
+        console.log(rowIndex, columnIndex)
+        }
+    } className={`tiles ${color}`}>
         {piece != ""?  <img className="pieces" alt={`${piece} piece`} src={`src/assets/${piece}.png`}></img> : ""}
     </div>
 }

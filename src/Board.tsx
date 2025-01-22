@@ -21,7 +21,17 @@ const Board = () => {
     }
     const [gameBoard, updateBoard]= useState<string[][]>(starterBoard)
     const [tileColors, setTileColors] = useState<string[]>(["navy-blue" , "sky-blue", "tileClicked"])
-    
+    const [toggleClick, updateClick] = useState<boolean>(false)
+
+    const onTileClick = (rowIndex: number, columnIndex: number) => {
+        if(toggleClick == false){
+
+        }
+
+        updateClick(!toggleClick)
+    }
+
+
     return <>
         <div>
             <h1>Choose a Color Palette:</h1>
@@ -34,7 +44,9 @@ const Board = () => {
                         return <Tile 
                             color = {tileColors[(columnIndex + rowIndex) % 2]}
                             piece={piece}
-                            key={`${rowIndex}-${columnIndex}`} />
+                            key={`${rowIndex},${columnIndex} tile`} 
+                            rowIndex={rowIndex}
+                            columnIndex={columnIndex}/>
                     })}
                 </div>
             })}
